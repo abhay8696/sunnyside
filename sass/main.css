@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  position: absolute;
+  margin-top: 1rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  color: hsl(0deg, 0%, 100%);
+  font-family: "Barlow", sans-serif;
+}
+nav ul {
+  display: flex;
+}
+nav ul span {
+  padding: 1rem 2rem;
+  margin: auto 1rem;
+}
+nav ul span:hover {
+  background-color: white;
+  cursor: pointer;
+  color: black;
+  border-radius: 5rem;
+}
+
+img {
+  width: 175px;
+}
+
+.div1 {
+  background-image: url("../images/desktop/image-header.jpg");
+  background-size: cover;
+  height: 100vh;
+}/*# sourceMappingURL=main.css.map */
