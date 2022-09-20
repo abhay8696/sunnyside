@@ -6,11 +6,12 @@
 
 body {
   font-size: 18px;
+  font-family: "Fraunces", serif;
 }
 
 .main {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 nav {
@@ -32,15 +33,14 @@ nav ul {
 nav ul span {
   padding: 1rem 2rem;
   margin: auto 1rem;
-}
-nav ul span:hover {
-  background-color: white;
-  cursor: pointer;
-  color: black;
   border-radius: 5rem;
 }
+nav ul span:hover {
+  background-color: rgba(255, 255, 255, 0.473);
+  cursor: pointer;
+}
 
-img {
+#logo {
   width: 175px;
 }
 
@@ -48,4 +48,203 @@ img {
   background-image: url("../images/desktop/image-header.jpg");
   background-size: cover;
   height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.div1 h1 {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 4.5rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  font-weight: 800;
+}
+
+.imageDivs {
+  display: flex;
+  width: 100%;
+}
+.imageDivs img {
+  width: 50%;
+}
+.imageDivs div {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+}
+.imageDivs div * {
+  width: 65%;
+  margin: 1rem 0;
+}
+.imageDivs div h2 {
+  font-size: 3rem;
+}
+.imageDivs div p {
+  color: hsl(210deg, 4%, 67%);
+  font-family: "Barlow", sans-serif;
+  line-height: 150%;
+}
+.imageDivs div .buttSpan {
+  position: relative;
+}
+.imageDivs div .buttSpan .borderBott {
+  opacity: 0.4;
+}
+.imageDivs div .buttSpan .borderBott-yellow {
+  background-color: yellow;
+}
+.imageDivs div .buttSpan .borderBott-red {
+  background-color: red;
+}
+.imageDivs div .buttSpan:hover .borderBott {
+  opacity: 1;
+}
+.imageDivs div .butt {
+  font-family: "Fraunces", serif;
+  letter-spacing: 0.1rem;
+  height: 0.5rem;
+  margin-bottom: -100px;
+  font-weight: bolder;
+  z-index: 10;
+}
+.imageDivs div .butt:hover {
+  cursor: pointer;
+}
+.imageDivs div .borderBott {
+  height: 10px;
+  width: 150px;
+  left: -0.5rem;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.8;
+  border-radius: 5px;
+}
+
+.backImgDivs {
+  width: 50%;
+  height: 80vh;
+}
+.backImgDivs div {
+  margin-top: 50%;
+  text-align: center;
+  width: 50%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.backImgDivs h3 {
+  font-size: 2rem;
+}
+.backImgDivs p {
+  font-family: "Barlow", sans-serif;
+  margin-top: 2rem;
+  line-height: 150%;
+  font-weight: 600;
+}
+
+.graphic {
+  background-image: url("../images//desktop/image-graphic-design.jpg");
+  background-size: 100% auto;
+  color: hsl(167deg, 40%, 24%);
+}
+
+.photography {
+  background-image: url("../images/desktop/image-photography.jpg");
+  background-size: 100% auto;
+  color: hsl(198deg, 62%, 26%);
+}
+
+.testimonials {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.testimonials h4 {
+  font-size: 1.5rem;
+  color: hsl(210deg, 4%, 67%);
+}
+.testimonials .people {
+  display: flex;
+  width: 75%;
+  height: 50%;
+  justify-content: space-evenly;
+}
+.testimonials .person {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 20vw;
+}
+.testimonials .person img {
+  width: 25%;
+  border-radius: 50%;
+}
+.testimonials .person p {
+  color: hsl(213deg, 9%, 39%);
+  text-align: center;
+  line-height: 150%;
+}
+.testimonials .person .creds {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.testimonials .person .name {
+  color: hsl(212deg, 27%, 19%);
+  font-weight: 900;
+}
+.testimonials .person .desgn {
+  color: hsl(210deg, 4%, 67%);
+  font-size: 14px;
+}
+
+.imageRow {
+  width: 100vw;
+  padding: 0px;
+  display: flex;
+}
+.imageRow img {
+  max-width: 25%;
+  margin: 0px;
+}
+
+footer {
+  background-color: hsl(168deg, 34%, 41%);
+  height: 40vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #256c5c;
+}
+
+#logo2 {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.links, .icons {
+  font-family: "Barlow", sans-serif;
+  width: 25%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }/*# sourceMappingURL=main.css.map */
