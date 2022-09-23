@@ -16,28 +16,87 @@ body {
 
 nav {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 10vh;
   width: 100%;
   position: absolute;
-  margin-top: 1rem;
-  padding: 2rem;
   box-sizing: border-box;
   color: hsl(0deg, 0%, 100%);
   font-family: "Barlow", sans-serif;
+}
+@media only screen and (min-width: 0) and (max-width: 480px) {
+  nav {
+    margin-top: 0.5rem;
+    padding: 1rem;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 720px) {
+  nav {
+    margin-top: 0.5rem;
+    padding: 1rem;
+  }
+}
+@media only screen and (min-width: 720px) and (max-width: 960px) {
+  nav {
+    margin-top: 1rem;
+    padding: 2rem;
+  }
+}
+@media only screen and (min-width: 960px) {
+  nav {
+    margin-top: 1rem;
+    padding: 2rem;
+  }
+}
+nav #hamburger {
+  display: none;
+}
+@media only screen and (min-width: 0) and (max-width: 480px) {
+  nav #hamburger {
+    display: block;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 720px) {
+  nav #hamburger {
+    display: block;
+  }
+}
+nav #hamburger:hover {
+  cursor: pointer;
 }
 nav ul {
   display: flex;
 }
 nav ul span {
-  padding: 1rem 2rem;
-  margin: auto 1rem;
   border-radius: 5rem;
 }
 nav ul span:hover {
   background-color: rgba(255, 255, 255, 0.473);
   cursor: pointer;
+}
+@media only screen and (min-width: 0) and (max-width: 480px) {
+  nav ul span {
+    display: none;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 720px) {
+  nav ul span {
+    display: none;
+  }
+}
+@media only screen and (min-width: 720px) and (max-width: 960px) {
+  nav ul span {
+    padding: 0.5rem 1rem;
+    margin: auto 0.5rem;
+  }
+}
+@media only screen and (min-width: 960px) {
+  nav ul span {
+    padding: 1rem 2rem;
+    margin: auto 1rem;
+  }
 }
 
 #logo {
@@ -50,8 +109,9 @@ nav ul span:hover {
   height: 100vh;
   width: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 .div1 h1 {
   position: absolute;
@@ -77,9 +137,9 @@ nav ul span:hover {
 .imageDivs div {
   width: 50%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: left;
 }
 .imageDivs div * {
@@ -142,8 +202,8 @@ nav ul span:hover {
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-around;
+  align-items: center;
 }
 .backImgDivs h3 {
   font-size: 2rem;
@@ -172,8 +232,8 @@ nav ul span:hover {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-evenly;
+  align-items: center;
 }
 .testimonials h4 {
   font-size: 1.5rem;
@@ -204,6 +264,7 @@ nav ul span:hover {
 .testimonials .person .creds {
   display: flex;
   flex-direction: column;
+  justify-content: "";
   align-items: center;
 }
 .testimonials .person .name {
@@ -231,8 +292,8 @@ footer {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-evenly;
+  align-items: center;
   color: #256c5c;
 }
 
@@ -245,6 +306,11 @@ footer {
   font-family: "Barlow", sans-serif;
   width: 25%;
   display: flex;
+  flex-direction: "";
   justify-content: space-evenly;
   align-items: center;
+}
+.links *:hover, .icons *:hover {
+  color: white;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

@@ -1,3 +1,5 @@
+@import 'breakpoints';
+
 $barlow : 'Barlow', sans-serif;
 $fraunces : 'Fraunces', serif;
 $grayishBlue :hsl(210, 4%, 67%);
@@ -6,6 +8,12 @@ $darkGrayishBlue: hsl(232, 10%, 55%);
 $desaturatedBlue: hsl(212, 27%, 19%);
 $darkModerateCyan: hsl(168, 34%, 41%);
 
+@mixin flexBox($direction: row, $justifyContent: flex-start, $alignItems: stretch) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
 * {
     padding: 0;
     margin: 0;
@@ -20,27 +28,63 @@ body{
     flex-wrap: wrap;
 }
 nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexBox(row, space-between, center);
     height: 10vh;
     width: 100%;
     position: absolute;
-    margin-top: 1rem;
-    padding: 2rem;
+    @include xs-sm-screen{
+        margin-top: 0.5rem;
+        padding: 1rem;
+    }
+    @include sm-md-screen{
+        margin-top: 0.5rem;
+        padding: 1rem;
+    }
+    @include md-lg-screen{
+        margin-top: 1rem;
+        padding: 2rem;
+    }
+    @include lg-xl-screen{
+        margin-top: 1rem;
+        padding: 2rem;
+    }
     box-sizing: border-box;
     color: hsl(0, 0%, 100%);
     font-family: $barlow;
-    & ul{
+    #hamburger{
+        display: none;
+        @include xs-sm-screen{
+            display: block;
+        }
+        @include sm-md-screen{
+            display: block;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    ul{
         display: flex;
-        & span{
+        span{
             &:hover{
                 background-color: rgba(255, 255, 255, 0.473);
                 cursor: pointer;
                 // font-family: 'Times New Roman', sans-serif;
             }
-            padding: 1rem 2rem;
-            margin: auto 1rem;
+            @include xs-sm-screen{
+                display: none;
+            }
+            @include sm-md-screen{
+                display: none;
+            }
+            @include md-lg-screen{
+                padding: 0.5rem 1rem;
+                margin: auto 0.5rem;
+            }
+            @include lg-xl-screen{
+                padding: 1rem 2rem;
+                margin: auto 1rem;
+            }
             border-radius: 5rem;
         }
     }
@@ -53,10 +97,8 @@ nav{
     background-size: cover;
     height: 100vh;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    & h1{
+    @include flexBox(row, center, center);
+    h1{
         position: absolute;
         top: 25%;
         left: 50%;
@@ -73,46 +115,43 @@ nav{
 .imageDivs{
     display: flex;
     width: 100%;
-    & img{
+    img{
         width: 50%;
     }
-    & div{
+    div{
         width: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+        @include flexBox(column, center, center);
         text-align: left;
         & *{
             width: 65%;
             margin: 1rem 0;
         }
-        & h2{
+        h2{
             font-size: 3rem;
         }
-        & p{
+        p{
             color: hsl(210, 4%, 67%);
             font-family: $barlow;
             line-height: 150%;
         }
-        & .buttSpan{
+        .buttSpan{
             position: relative;
-            & .borderBott{
+            .borderBott{
                 opacity: 0.4;
             }
-            & .borderBott-yellow{
+            .borderBott-yellow{
                 background-color: yellow;
             }
-            & .borderBott-red{
+            .borderBott-red{
                 background-color: red;
             }
             &:hover{
-                & .borderBott{
+                .borderBott{
                     opacity: 1;
                 }
             }
         }
-        & .butt{
+        .butt{
             font-family: $fraunces;
             letter-spacing: 0.1rem;
             height: 0.5rem;
@@ -123,7 +162,7 @@ nav{
             }
             z-index: 10;
         }
-        & .borderBott{
+        .borderBott{
             height: 10px;
             width: 150px;
             left: -0.5rem;
@@ -143,15 +182,12 @@ nav{
         width: 50%;
         margin-left: 50%;
         transform: translateX(-50%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
+        @include flexBox(column, space-around, center);
     }
-    & h3{
+    h3{
         font-size: 2rem;
     }
-    & p{
+    p{
         font-family: $barlow;
         margin-top: 2rem;
         line-height: 150%;
@@ -171,39 +207,31 @@ nav{
 .testimonials{
     width: 100%;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    & h4{
+    @include flexBox(column, space-evenly, center);
+    h4{
         font-size: 1.5rem;
         color: $grayishBlue;
     }
-    & .people{
+    .people{
         display: flex;
         width: 75%;
         height: 50%;
         justify-content: space-evenly;
     }
-    & .person{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
+    .person{
+        @include flexBox(column, space-between, center);
         width: 20vw;
-        & img{
+        img{
             width: 25%;
             border-radius: 50%;
         }
-        & p{
+        p{
             color:  $veryDarkGrayishBlue;
             text-align: center;
             line-height: 150%;
         }
-        & .creds{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .creds{
+            @include flexBox(column, '', center);
         }
         .name{
             color: $desaturatedBlue;
@@ -220,7 +248,7 @@ nav{
     width: 100vw;
     padding: 0px;
     display: flex;
-    & img{
+    img{
         max-width: 25%;
         margin: 0px;
 
@@ -230,10 +258,7 @@ footer{
     background-color: $darkModerateCyan;
     height: 40vh;
     width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: space-evenly;
+    @include flexBox(column, space-evenly, center);
     color:#256c5c;
 }
 #logo2{
@@ -243,7 +268,11 @@ footer{
 .links, .icons{
     font-family: $barlow;
     width: 25%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    @include flexBox('', space-evenly, center);
+    *{
+        &:hover{
+            color: white;
+            cursor: pointer;
+        }
+    }
 }
