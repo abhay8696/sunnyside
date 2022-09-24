@@ -26,41 +26,21 @@ nav {
   color: hsl(0deg, 0%, 100%);
   font-family: "Barlow", sans-serif;
 }
-@media only screen and (min-width: 0) and (max-width: 480px) {
+@media only screen and (max-width: 720px) {
   nav {
     margin-top: 0.5rem;
-    padding: 1rem;
+    padding: 2rem;
   }
 }
-@media only screen and (min-width: 480px) and (max-width: 720px) {
-  nav {
-    margin-top: 0.5rem;
-    padding: 1rem;
-  }
-}
-@media only screen and (min-width: 720px) and (max-width: 960px) {
+@media only screen and (min-width: 720px) {
   nav {
     margin-top: 1rem;
     padding: 2rem;
   }
 }
-@media only screen and (min-width: 960px) {
-  nav {
-    margin-top: 1rem;
-    padding: 2rem;
-  }
-}
-nav #hamburger {
-  display: none;
-}
-@media only screen and (min-width: 0) and (max-width: 480px) {
+@media only screen and (min-width: 720px) {
   nav #hamburger {
-    display: block;
-  }
-}
-@media only screen and (min-width: 480px) and (max-width: 720px) {
-  nav #hamburger {
-    display: block;
+    display: none;
   }
 }
 nav #hamburger:hover {
@@ -96,6 +76,62 @@ nav ul span:hover {
   nav ul span {
     padding: 1rem 2rem;
     margin: auto 1rem;
+  }
+}
+
+.menu {
+  position: absolute;
+  color: hsl(232deg, 10%, 55%);
+  font-family: "Barlow", sans-serif;
+  background-color: white;
+  width: 80vw;
+  top: 12vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 10;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: "";
+  align-items: center;
+}
+@media only screen and (min-width: 720px) {
+  .menu {
+    display: none;
+  }
+}
+.menu .triShape {
+  width: 0;
+  height: 0;
+  border-bottom: 2rem solid white;
+  border-left: 2rem solid transparent;
+  right: 0;
+  position: absolute;
+  top: -2rem;
+}
+.menu span {
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+}
+@media only screen and (min-width: 0) and (max-width: 480px) {
+  .menu span:active {
+    background-color: yellow;
+    font-family: "Fraunces", serif;
+    color: black;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 720px) {
+  .menu span:hover {
+    background-color: yellow;
+    cursor: pointer;
+    font-family: "Fraunces", serif;
+    color: black;
+    font-weight: 600;
+    text-transform: uppercase;
   }
 }
 

@@ -6,7 +6,7 @@ $grayishBlue :hsl(210, 4%, 67%);
 $veryDarkGrayishBlue:  hsl(213, 9%, 39%);
 $darkGrayishBlue: hsl(232, 10%, 55%);
 $desaturatedBlue: hsl(212, 27%, 19%);
-$darkModerateCyan: hsl(168, 34%, 41%);
+$darkModerateCyan: hsl(168, 34%, 41%); 
 
 @mixin flexBox($direction: row, $justifyContent: flex-start, $alignItems: stretch) {
     display: flex;
@@ -32,19 +32,11 @@ nav{
     height: 10vh;
     width: 100%;
     position: absolute;
-    @include xs-sm-screen{
+    @include md-below-screen{
         margin-top: 0.5rem;
-        padding: 1rem;
-    }
-    @include sm-md-screen{
-        margin-top: 0.5rem;
-        padding: 1rem;
-    }
-    @include md-lg-screen{
-        margin-top: 1rem;
         padding: 2rem;
     }
-    @include lg-xl-screen{
+    @include md-above-screen{
         margin-top: 1rem;
         padding: 2rem;
     }
@@ -52,12 +44,8 @@ nav{
     color: hsl(0, 0%, 100%);
     font-family: $barlow;
     #hamburger{
-        display: none;
-        @include xs-sm-screen{
-            display: block;
-        }
-        @include sm-md-screen{
-            display: block;
+        @include md-above-screen{
+            display: none;
         }
         &:hover{
             cursor: pointer;
@@ -86,6 +74,56 @@ nav{
                 margin: auto 1rem;
             }
             border-radius: 5rem;
+        }
+    }
+}
+.menu{
+    @include md-above-screen{
+        display: none;
+    }
+    position: absolute;
+    color: $darkGrayishBlue;
+    font-family: $barlow;
+    background-color: white;
+    width: 80vw;
+    top: 12vh;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 10;
+    padding: 2rem;
+    @include flexBox(column, '', center);
+    .triShape{
+        width: 0;
+        height: 0;
+        border-bottom: 2rem solid white;
+        border-left: 2rem solid transparent;
+        right: 0;
+        position: absolute;
+        top: -2rem;
+    }
+    span{
+        padding: 1rem 2rem;
+        border-radius: 5rem;
+        @include xs-sm-screen{
+            &:active{
+                background-color: yellow;
+                font-family: $fraunces;
+                color: black;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+        }
+        @include sm-md-screen{
+            &:hover{
+                background-color: yellow;
+                cursor: pointer;
+                font-family: $fraunces;
+                color: black;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
         }
     }
 }
