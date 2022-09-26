@@ -200,8 +200,19 @@ nav ul span:hover {
   display: flex;
   width: 100%;
 }
+@media only screen and (max-width: 720px) {
+  .imageDivs {
+    flex-direction: column;
+  }
+}
 .imageDivs img {
   width: 50%;
+}
+@media only screen and (max-width: 720px) {
+  .imageDivs img {
+    width: 100%;
+    order: 1;
+  }
 }
 .imageDivs div {
   width: 50%;
@@ -211,23 +222,53 @@ nav ul span:hover {
   align-items: center;
   text-align: left;
 }
+@media only screen and (max-width: 720px) {
+  .imageDivs div {
+    width: 100%;
+    order: 2;
+  }
+}
 .imageDivs div * {
   width: 65%;
   margin: 1rem 0;
 }
-.imageDivs div h2 {
-  font-size: 3rem;
+@media only screen and (max-width: 720px) {
+  .imageDivs div * {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .imageDivs div * {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .imageDivs div h2 {
+    font-size: 3rem;
+  }
 }
 .imageDivs div p {
   color: hsl(210deg, 4%, 67%);
   font-family: "Barlow", sans-serif;
   line-height: 150%;
 }
+@media only screen and (max-width: 960px) {
+  .imageDivs div p {
+    font-size: 16px;
+  }
+}
 .imageDivs div .buttSpan {
   position: relative;
 }
 .imageDivs div .buttSpan .borderBott {
   opacity: 0.4;
+}
+@media only screen and (max-width: 720px) {
+  .imageDivs div .buttSpan .borderBott {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 25%;
+  }
 }
 .imageDivs div .buttSpan .borderBott-yellow {
   background-color: yellow;
@@ -249,6 +290,11 @@ nav ul span:hover {
 .imageDivs div .butt:hover {
   cursor: pointer;
 }
+@media only screen and (max-width: 960px) {
+  .imageDivs div .butt {
+    font-size: 16px;
+  }
+}
 .imageDivs div .borderBott {
   height: 10px;
   width: 150px;
@@ -257,6 +303,12 @@ nav ul span:hover {
   z-index: -1;
   opacity: 0.8;
   border-radius: 5px;
+}
+@media only screen and (max-width: 960px) {
+  .imageDivs div .borderBott {
+    height: 5px;
+    width: 125px;
+  }
 }
 
 .backImgDivs {

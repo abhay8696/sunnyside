@@ -175,30 +175,63 @@ nav{
 }
 .imageDivs{
     display: flex;
+    @include md-below-screen{
+        flex-direction: column;
+    }
     width: 100%;
     img{
         width: 50%;
+        @include md-below-screen{
+            width: 100%;
+            order: 1;
+        }
     }
     div{
         width: 50%;
+        @include md-below-screen{
+            width: 100%;
+            order: 2;
+        }
         @include flexBox(column, center, center);
         text-align: left;
         & *{
             width: 65%;
             margin: 1rem 0;
+            @include md-below-screen{
+                width: 75%;
+            }
+            @include md-below-screen{
+                text-align: center;
+            }
         }
         h2{
-            font-size: 3rem;
+            @include lg-above-screen{
+                font-size: 3rem;
+            }
+            @include md-lg-screen{
+                // font-size: 2.5rem;
+            }
+            @include sm-md-screen{
+                // font-size: 2rem;
+            }
         }
         p{
             color: hsl(210, 4%, 67%);
             font-family: $barlow;
             line-height: 150%;
+            @include lg-below-screen{
+                font-size: 16px;
+            }
         }
         .buttSpan{
             position: relative;
             .borderBott{
                 opacity: 0.4;
+                @include md-below-screen{
+                    margin-left: 50%;
+                    transform: translateX(-50%);
+                    width: 25%;
+                }
             }
             .borderBott-yellow{
                 background-color: yellow;
@@ -222,6 +255,9 @@ nav{
                 cursor: pointer;
             }
             z-index: 10;
+            @include lg-below-screen{
+                font-size: 16px;
+            }
         }
         .borderBott{
             height: 10px;
@@ -231,6 +267,10 @@ nav{
             z-index: -1;
             opacity: 0.8;
             border-radius: 5px;
+            @include lg-below-screen{
+                height: 5px;
+                width: 125px;
+            }
         }
     }
 }
