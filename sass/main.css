@@ -313,39 +313,119 @@ nav ul span:hover {
 
 .backImgDivs {
   width: 50%;
-  height: 80vh;
+  position: relative;
+}
+@media only screen and (max-width: 720px) {
+  .backImgDivs {
+    width: 100%;
+  }
 }
 .backImgDivs div {
-  margin-top: 50%;
+  position: absolute;
+  top: 50%;
+  height: 50%;
   text-align: center;
   width: 50%;
   margin-left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
+}
+@media only screen and (min-width: 720px) and (max-width: 960px) {
+  .backImgDivs div {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .backImgDivs div {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .backImgDivs div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 }
 .backImgDivs h3 {
   font-size: 2rem;
 }
+@media only screen and (min-width: 720px) and (max-width: 960px) {
+  .backImgDivs h3 {
+    font-size: 1.5rem;
+  }
+}
 .backImgDivs p {
   font-family: "Barlow", sans-serif;
-  margin-top: 2rem;
+  margin: 1rem 0rem;
   line-height: 150%;
   font-weight: 600;
 }
+@media only screen and (min-width: 720px) and (max-width: 960px) {
+  .backImgDivs p {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .backImgDivs p {
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .backImgDivs .imgRef1 {
+    visibility: hidden;
+    max-width: 100%;
+  }
+  .backImgDivs .imgRef2 {
+    display: none;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .backImgDivs .imgRef1 {
+    display: none;
+  }
+  .backImgDivs .imgRef2 {
+    visibility: hidden;
+    max-width: 100%;
+  }
+}
 
 .graphic {
-  background-image: url("../images//desktop/image-graphic-design.jpg");
+  background-repeat: no-repeat;
   background-size: 100% auto;
   color: hsl(167deg, 40%, 24%);
 }
+@media only screen and (min-width: 480px) {
+  .graphic {
+    background-image: url("../images/desktop/image-graphic-design.jpg");
+  }
+}
+@media only screen and (max-width: 480px) {
+  .graphic {
+    background-image: url("../images/mobile/image-graphic-design.jpg");
+    max-width: 100%;
+  }
+}
 
 .photography {
-  background-image: url("../images/desktop/image-photography.jpg");
+  background-repeat: no-repeat;
   background-size: 100% auto;
   color: hsl(198deg, 62%, 26%);
+}
+@media only screen and (min-width: 480px) {
+  .photography {
+    background-image: url("../images/desktop/image-photography.jpg");
+  }
+}
+@media only screen and (max-width: 480px) {
+  .photography {
+    background-image: url("../images/mobile/image-photography.jpg");
+    max-height: 85vh;
+  }
 }
 
 .testimonials {
