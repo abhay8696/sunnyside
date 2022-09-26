@@ -525,14 +525,20 @@ nav ul span:hover {
   width: 100vw;
   padding: 0px;
   display: flex;
+  flex-wrap: wrap;
 }
 .imageRow img {
   max-width: 25%;
   margin: 0px;
 }
+@media only screen and (max-width: 480px) {
+  .imageRow img {
+    max-width: 50%;
+  }
+}
 
 footer {
-  background-color: hsl(168deg, 34%, 41%);
+  background-color: hsl(168deg, 35%, 59%);
   height: 40vh;
   width: 100vw;
   display: flex;
@@ -555,7 +561,19 @@ footer {
   justify-content: space-evenly;
   align-items: center;
 }
+@media only screen and (max-width: 720px) {
+  .links, .icons {
+    width: 75%;
+  }
+}
 .links *:hover, .icons *:hover {
   color: white;
   cursor: pointer;
+}
+
+.attribution {
+  background-color: hsl(168deg, 35%, 59%);
+  width: 100%;
+  text-align: center;
+  padding-bottom: 1rem;
 }/*# sourceMappingURL=main.css.map */

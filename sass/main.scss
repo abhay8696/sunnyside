@@ -432,14 +432,17 @@ nav{
     width: 100vw;
     padding: 0px;
     display: flex;
+    flex-wrap: wrap;
     img{
         max-width: 25%;
         margin: 0px;
-
+        @include sm-below-screen{
+            max-width: 50%;
+        }
     }
 }
 footer{
-    background-color: $darkModerateCyan;
+    background-color: hsl(168, 35%, 59%);
     height: 40vh;
     width: 100vw;
     @include flexBox(column, space-evenly, center);
@@ -453,10 +456,19 @@ footer{
     font-family: $barlow;
     width: 25%;
     @include flexBox('', space-evenly, center);
+    @include md-below-screen{
+        width: 75%;
+    }
     *{
         &:hover{
             color: white;
             cursor: pointer;
         }
     }
+}
+.attribution{
+    background-color: hsl(168, 35%, 59%);
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1rem;
 }
