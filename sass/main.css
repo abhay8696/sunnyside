@@ -46,34 +46,34 @@ nav {
 nav #hamburger:hover {
   cursor: pointer;
 }
-nav ul {
+nav section {
   display: flex;
 }
-nav ul span {
+nav section span {
   border-radius: 5rem;
 }
-nav ul span:hover {
+nav section span:hover {
   background-color: rgba(255, 255, 255, 0.473);
   cursor: pointer;
 }
 @media only screen and (min-width: 0) and (max-width: 480px) {
-  nav ul span {
+  nav section span {
     display: none;
   }
 }
 @media only screen and (min-width: 480px) and (max-width: 720px) {
-  nav ul span {
+  nav section span {
     display: none;
   }
 }
 @media only screen and (min-width: 720px) and (max-width: 960px) {
-  nav ul span {
+  nav section span {
     padding: 0.5rem 1rem;
     margin: auto 0.5rem;
   }
 }
 @media only screen and (min-width: 960px) {
-  nav ul span {
+  nav section span {
     padding: 1rem 2rem;
     margin: auto 1rem;
   }
