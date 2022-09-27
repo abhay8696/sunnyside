@@ -10,4 +10,4 @@ Thanks for checking out this front-end coding challenge.
 HTML, CSS, JS, SASS, FLEXBOX, MEDIA-QUERIES
 
 
-**Have fun building!** 🚀
+click here to view site**https://abhay8696.github.io/sunnyside/** 🚀
